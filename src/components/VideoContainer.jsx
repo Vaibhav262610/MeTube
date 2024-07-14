@@ -1,9 +1,31 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { YT_VIDEO } from "../constants/youtube";
+import VideoCard from "./VideoCard";
 
 const VideoContainer = () => {
-  return (
-    <div>VideoContainer</div>
-  )
-}
+  const [video, setVideo] = useState([]);
+  const fetchYoutubeVideos = async () => {
+    const res = await axios.get(YT_VIDEO);
+    console.log(res?.data?.items);
+    setVideo(res?.data?.items);
+  };
 
-export default VideoContainer
+  useEffect(() => {
+    fetchYoutubeVideos();
+  }, []);
+
+  return (
+    <>
+      <div className=" w-full">
+        <div className="p-12 flex-wrap gap-5 flex justify-center w-full items-center">
+          {video.map((items) => {
+            return <VideoCard items={items} />;
+          })}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default VideoContainer;

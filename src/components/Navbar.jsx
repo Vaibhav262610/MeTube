@@ -4,15 +4,26 @@ import { GoBell } from "react-icons/go";
 import { IoIosMenu } from "react-icons/io";
 import { MdAccountCircle } from "react-icons/md";
 import { RiVideoAddLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { togggleSidebar } from "../store/AppSlcie";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  const toggleHandler = () => {
+    dispatch(togggleSidebar());
+  };
+
   return (
     <>
-      <div className="flex fixed bg-[#0c0c0c] items-center  justify-center ml-4 p-1">
-        <div className="flex items-center pt-1 w-[93rem] justify-between">
-          <div className="flex items-center gap-4">
+      <div className="flex fixed w-[100%] bg-[#1c1c1c] items-center z-9 justify-between  p-2">
+        {/* <div className="flex items-center pt-1 w-[93rem] justify-between"> */}
+          <div className="flex items-center gap-4 ml-5">
             <div>
-              <IoIosMenu className="text-2xl cursor-pointer  text-gray-400" />
+              <IoIosMenu
+                onClick={toggleHandler}
+                className="text-2xl cursor-pointer  text-gray-400"
+              />
             </div>
             <div className="flex  items-center gap-1 cursor-pointer">
               <img
@@ -38,14 +49,14 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="mr-5">
             <div className="flex gap-8 items-center">
               <RiVideoAddLine className="text-gray-300 cursor-pointer text-xl" />
               <GoBell className="text-gray-300 cursor-pointer text-xl" />
               <MdAccountCircle className="text-gray-300 cursor-pointer text-3xl" />
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );
