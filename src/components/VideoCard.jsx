@@ -18,13 +18,13 @@ const VideoCard = ({ items }) => {
 
   return (
     <>
-      <div>
+      <div className="">
         <img
           src={items.snippet.thumbnails.medium.url}
           alt="404 IMAGE NOT FOUND"
-          height={350}
-          className="cursor-pointer video-ani duration-200 transition-all ease-in-out rounded-lg"
-          width={350}
+          // height={350}
+          className="thumbnail-main h-[100%] sm:w-[100%] w-[600px] sm:h-[100%] cursor-pointer video-ani duration-200 transition-all ease-in-out rounded-none md:rounded-lg"
+          // width={350}
         />
         <div className="flex gap-4 cursor-pointer mt-3">
           <div>

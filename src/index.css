@@ -30,7 +30,7 @@ body {
   width: 10px;
 }
 
-.sidebar::-webkit-scrollbar{
+.sidebar::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -53,9 +53,37 @@ body {
   background-color: rgb(177, 177, 177);
 }
 
-
-.video-ani:hover{
+.video-ani:hover {
   /* height: 10rem; */
   /* width: 10rem; */
   z-index: -1;
 }
+
+@media only screen and (max-width: 1020px) {
+  .icons {
+    display: none;
+  }
+  .input {
+    display: none;
+  }
+  .search-icon {
+    border: none;
+    background: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .width-main {
+    width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .footer{
+    visibility: visible;
+  }
+}
+
+/* .mobile-search{
+  display: none;
+} */
