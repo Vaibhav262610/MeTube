@@ -33,19 +33,21 @@ const VideoCard = ({ items }) => {
               alt="404 not found"
               height={40}
               width={40}
-              className="rounded-full"
+              className="ml-4 sm:ml-0 rounded-full"
             />
           </div>
           <div className="text-sm h-20">
             <h1 className="w-72  text-white">
               {items.snippet.title.slice(0, 70)}...
             </h1>
-            <h2 className="text-gray-400 text-sm">
-              {items.snippet.channelTitle}
-            </h2>
-            <div className="text-gray-400 flex gap-5 text-sm">
-              <h2>48M views</h2>
-              <h2>3 years ago</h2>
+            <div className="flex flex-row gap-4 sm:flex-col">
+              <h2 className="text-gray-400 text-sm">
+                {items.snippet.channelTitle}
+              </h2>
+              <div className="text-gray-400 flex gap-5 text-sm">
+                <h2>48M views</h2>
+                <h2>3 years ago</h2>
+              </div>
             </div>
           </div>
         </div>

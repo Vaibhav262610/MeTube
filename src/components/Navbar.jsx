@@ -16,9 +16,9 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex fixed w-[100%] bg-[#1c1c1c] items-center z-9 justify-between   p-2">
+      <div className="flex fixed w-[100%] bg-[#1c1c1c] items-center z-9 justify-between py-4 sm:py-2">
         {/* <div className="flex items-center pt-1 w-[93rem] justify-between"> */}
-        <div className="flex items-center gap-4 ml-5">
+        <div className="flex items-center gap-4 ml-0 sm:ml-5">
           <div>
             <IoIosMenu
               onClick={toggleHandler}
